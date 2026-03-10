@@ -1,0 +1,334 @@
+/* ============================================
+   CSS CUSTOM PROPERTIES — Дизайн системата
+   Промени само тук и целият сайт се update-ва
+   ============================================ */
+:root {
+    --color-dark:       #2d3748;
+    --color-hero-from:  #7c6dc5;
+    --color-hero-to:    #9b6bbf;
+    --color-accent:     #7c6dc5;
+    --color-white:      #ffffff;
+    --color-bg-light:   #f7f8fc;
+    --color-text:       #444444;
+    --color-text-light: #666666;
+
+    --font-family:    'Inter', sans-serif;
+    --border-radius:  8px;
+    --transition:     0.3s ease;
+    --shadow:         0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   RESET — Изравняваме всички браузъри
+   ============================================ */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   BASE — Глобални стилове
+   ============================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================
+   CONTAINER — Централизиран wrapper
+   ============================================ */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+header {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 24px 0;
+    text-align: center;
+}
+
+.header-brand h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.header-brand .subtitle {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 16px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 4px 0;
+    position: relative;
+    transition: color var(--transition);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-white);
+    transition: width var(--transition);
+}
+
+nav a:hover {
+    color: var(--color-white);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+#hero {
+    background: linear-gradient(
+        135deg,
+        var(--color-hero-from) 0%,
+        var(--color-hero-to) 100%
+    );
+    color: var(--color-white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+#hero h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+#hero p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+}
+
+/* ============================================
+   BUTTON — Primary CTA
+   ============================================ */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 2px solid var(--color-white);
+    border-radius: 25px;
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-white);
+    color: var(--color-hero-from);
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+#about {
+    background-color: var(--color-white);
+    padding: 64px 0;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+}
+
+#about p {
+    max-width: 580px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+/* ============================================
+   PROJECTS SECTION
+   ============================================ */
+#projects {
+    background-color: var(--color-bg-light);
+    padding: 64px 0;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 40px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* ============================================
+   CARD КОМПОНЕНТ
+   ============================================ */
+.card {
+    background: var(--color-white);
+    border: 1px solid #e8eaf0;
+    border-radius: var(--border-radius);
+    padding: 28px 24px;
+    text-align: left;
+    box-shadow: var(--shadow);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card h3 a {
+    color: var(--color-accent);
+    transition: color var(--transition);
+}
+
+.card h3 a:hover {
+    color: var(--color-hero-to);
+}
+
+.card p {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    background-color: var(--color-dark);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 28px 0;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 12px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition:
+        color var(--transition),
+        opacity var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--color-white);
+}
+
+/* ============================================
+   RESPONSIVE — Таблет (до 768px)
+   ============================================ */
+@media (max-width: 768px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 20px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE — Мобилен (до 480px)
+   ============================================ */
+@media (max-width: 480px) {
+
+    .header-brand h1 {
+        font-size: 1.4rem;
+    }
+
+    #hero {
+        padding: 56px 0;
+    }
+
+    #hero h2 {
+        font-size: 1.3rem;
+    }
+
+    #about,
+    #projects {
+        padding: 48px 0;
+    }
+}
