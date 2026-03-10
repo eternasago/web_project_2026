@@ -21,7 +21,7 @@
             <a href="#hero">Начало</a>
             <a href="#about">За мен</a>
             <a href="#projects">Проекти</a>
-            <a href="#contact">Контакт</a>
+            <a href="#contact-form">Контакт</a>
         </nav>
     </div>
 </header>
@@ -71,6 +71,27 @@
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <section id="contact-form">
+        <div class="container">
+            <h2>Контактуване</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Име:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Съобщение:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Изпрати</button>
+            </form>
         </div>
     </section>
 
